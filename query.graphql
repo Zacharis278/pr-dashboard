@@ -1,0 +1,50 @@
+query {
+  search(query: "org:edx team:edx/masters-neem is:pr", type: ISSUE, last: 10) {
+    edges {
+      node {
+        ... on PullRequest {
+          author {
+            login
+            avatarUrl
+          }
+          repository {
+            name
+            nameWithOwner
+          }
+          title
+          createdAt
+          updatedAt
+          lastEditedAt
+          mergeable
+          reviews (last: 10) {
+            edges {
+              node {
+                ... on PullRequestReview {
+                  state
+                  updatedAt
+                  author {
+                    login
+                    avatarUrl
+                  }
+                }
+              }
+            }
+          }
+          commits (last: 1) {
+            edges {
+              node {
+                ... on PullRequestCommit {
+                  commit {
+                    status {
+                      state
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+.pr-container {
+  height: 80px;
+  margin: 20px;
+  padding: 10px;
+  /* border: 2px solid grey; */
+  border-radius: 20px;
+
+  -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+.status-bar {
+  font-size: 1.5em;
+  text-align: center;
+  padding: 10px;
+}
+
+.title {
+  display: inline-block;
+  text-overflow: ellipsis;
+  width: calc(100% - 250px);
+  margin-top: 0;
+  margin-bottom: 15px;
+  white-space: nowrap;
+  overflow:hidden
+}
+
+.repo-name {
+  display: inline-block;
+  height: 100%;
+  min-width: 300px;
+  margin-right: 20px;
+  font-size: 1.5em;
+}
+
+.author-avatar {
+  float: left;
+  height: 100%;
+  margin-right: 10px;
+  border-radius: 20%;
+}
+
+.review-avatar {
+  height: 100%;
+}
+
+.review-icon {
+  position: relative;
+  margin-left: 3px;
+  font-size: 1.3em;
+}
+
+.review {
+  display: inline-block;
+  height: 20px;
+  padding-right: 20px;
+}
+
+.details {
+  height: 30px;
+}
+
+.date-info {
+  float: right;
+  width: 150px;
+}
+.date-info, p {
+  margin: 0;
+}
+.dateUpdated {
+  margin-top: 10px;
+  font-size: 1.5em;
+}
+
+.status-success {
+  background: #006500;
+}
+.status-failure {
+  background: #D61800;
+}
+.status-unknown {
+  background: #8E8E8E
+}
+.status-pending {
+  animation: pulse 5s infinite;
+}
+@keyframes pulse {
+  0% {
+    background-color: #6A8E3D;
+  }
+  50% {
+    background-color: #85AA58;
+  }
+  100% {
+    background-color: #6A8E3D;
+  }
+}
