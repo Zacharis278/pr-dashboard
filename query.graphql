@@ -1,5 +1,5 @@
 query {
-  search(query: "org:edx team:edx/masters-neem is:pr", type: ISSUE, last: 10) {
+  search(query: "org:edx team:edx/masters-devs is:pr is:open", type: ISSUE, last: 10) {
     edges {
       node {
         ... on PullRequest {
