@@ -37,14 +37,8 @@ class RequestHandler(SimpleHTTPRequestHandler):
         )
         return response.json()
 
-    def fetch_mock(self):
-        return {
-            "a":"b"
-        }
-
 
 def run():
-    # TODO: also make sure this port isn't open on the pi
     httpd = HTTPServer(('127.0.0.1', 1337), RequestHandler)
     httpd.serve_forever()
 
