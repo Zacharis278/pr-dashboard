@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import moment from 'moment'
-import mockData from '../mock'
 import '../assets/App.css'
 
 
@@ -41,7 +40,7 @@ function PullRequest(props) {
         <div className={`pr-container ${statusClass}`}>
             <img className="author-avatar" src={pullRequest.author.avatarUrl} alt={pullRequest.author.login}></img>
             <div className="date-info">
-                <p>Updated</p>
+                <p><b>Updated</b></p>
                 <p className="dateUpdated">{moment(pullRequest.updatedAt).fromNow()}</p>
             </div>
             <h2 className="title">{pullRequest.title}</h2>
