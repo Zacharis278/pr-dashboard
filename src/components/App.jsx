@@ -23,8 +23,14 @@ function Review(props) {
 
 function PullRequest(props) {
     const pullRequest = props.value
-    const status = pullRequest.commits.edges ? pullRequest.commits.edges[0].node.commit.status.state : null;
+    let status;
     var statusClass;
+    try {
+        status = pullRequest.commits.edges[0].node.commit.status.state;
+    } catch (err) {
+        status = null;
+    }
+
     if (status === 'SUCCESS') {
         statusClass = 'status-success'
     } else if (status === 'FAILURE') {
