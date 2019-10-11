@@ -18,7 +18,10 @@ class RequestHandler(SimpleHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
-        if self.path == '/' or self.path.startswith('/static/'):
+        if self.path == '/':
+            self.send_header('Cache-Control','no-cache, no-store, must-revalidate')
+            super().do_GET()
+        elif self.path.startswith('/static/'):
             super().do_GET()
         elif self.path == '/query/':
             res = self.fetch_data()
